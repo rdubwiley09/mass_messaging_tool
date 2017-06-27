@@ -7,8 +7,8 @@ block main
     .col-md-4
       h1 Login!
       form(method="POST", role="form")
-        {{ form.hidden_tag() }}
-        {{wtf.form_field(form.username)}}
-        {{wtf.form_field(form.password)}}        
-        {{wtf.form_field(form.submit, class="btn btn-success")}}
+        {{ login_user_form.hidden_tag() }}
+        {{wtf.form_field(login_user_form.username)}}
+        {{wtf.form_field(login_user_form.password)}}        
+        {{wtf.form_field(login_user_form.submit, class="btn btn-success")}}
     .col-md-4
