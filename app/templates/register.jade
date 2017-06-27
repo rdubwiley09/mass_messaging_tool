@@ -1,0 +1,14 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+extends base
+block main      
+  .row
+    .col-md-4
+    .col-md-4
+      h1 Register!
+      form(method="POST", role="form")
+        {{ form.hidden_tag() }}
+        {{wtf.form_field(form.username)}}
+        {{wtf.form_field(form.password)}}        
+        {{wtf.form_field(form.submit, class="btn btn-success")}}
+    .col-md-4

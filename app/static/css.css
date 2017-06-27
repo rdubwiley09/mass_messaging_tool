@@ -1,0 +1,22 @@
+legend {
+  text-align: center;
+}
+
+#dvImportSegments {
+  position: absolute;
+  width: 1000px;
+  left: 50%;
+  text-align: center;
+  margin: 0 0 0 -250px;
+  z-index: 15;
+}
+
+#message {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#submit-button{
+  margin-top: 25px;
+  text-align: center;
+}
