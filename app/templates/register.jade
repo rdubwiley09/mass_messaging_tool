@@ -6,9 +6,5 @@ block main
     .col-md-4
     .col-md-4
       h1 Register!
-      form(method="POST", role="form")
-        {{ form.hidden_tag() }}
-        {{wtf.form_field(form.email)}}
-        {{wtf.form_field(form.password)}}        
-        {{wtf.form_field(form.submit, class="btn btn-success")}}
+      {{wtf.quick_form(register_user_form)}}
     .col-md-4
