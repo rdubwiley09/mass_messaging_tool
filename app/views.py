@@ -8,14 +8,11 @@ from app.user import User, Role
 from app.forms.forms import LoginForm, RegisterForm
 from flask import request, render_template, session, url_for, redirect
 from flask_security import Security, MongoEngineUserDatastore, login_required
-
-def test(msg):
-    print(dir(msg))
-    print(msg.body)
+from app.send_email import send_email
 
 user_datastore = MongoEngineUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
-security.send_mail_task(test)
+security.send_mail_task(send_email)
 
 # Views
 @app.route('/')
