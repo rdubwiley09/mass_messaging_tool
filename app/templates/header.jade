@@ -1,6 +1,24 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
 extends base
 block header
-    .row.header
-      .col-md-12
-        h1 hello
-    block body
+  .row(id="header")
+    .col-xs-6
+      h1#title Website Name
+    .col-xs-6
+      .dropdown
+        button#menu.btn.btn-default.dropdown-toggle.pull-right(type='button', data-toggle='dropdown')
+          | Menu
+          span.caret
+        ul.dropdown-menu.dropdown-menu-right#dropdownbox(role='menu', aria-labelledby='menu', style="vertical-align:middle")
+          li(role='presentation')
+            a(role='menuitem', tabindex='-1', href='/') Home
+          li(role='presentation')
+            a(role='menuitem', tabindex='-1', href='/login') Login
+          li(role='presentation')
+            a(role='menuitem', tabindex='-1', href='/register') Register
+          li(role='presentation')
+            a(role='menuitem', tabindex='-1', href='/logout') Log Out
+            li(role='presentation')
+              a(role='menuitem', tabindex='-1', href='/reset') Reset Password
+  block body
