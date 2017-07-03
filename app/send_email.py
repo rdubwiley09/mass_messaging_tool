@@ -2,7 +2,6 @@ import requests
 from app.config import api_key
 
 def send_email(msg):
-    print(msg.sender)
     response = requests.post(
         "https://api.mailgun.net/v3/reformmidems.com/messages",
         auth=("api", api_key),
@@ -13,4 +12,3 @@ def send_email(msg):
             "text": msg.body
         }
     )
-    print(response.text)
