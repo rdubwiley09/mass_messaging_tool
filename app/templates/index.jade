@@ -1,7 +1,10 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
 extends header
-block body  
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js')
+block body      
   .row
-    .col-xs-6
-      h2 hello there!
+    .col-md-4
+    .col-md-4
+      h1 Texting Form
+      {{wtf.quick_form(texting_form)}}
+    .col-md-4

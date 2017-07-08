@@ -1,13 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import SelectField, StringField, PasswordField, SubmitField
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from wtforms import SelectField, StringField, PasswordField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, InputRequired
 
-class LoginForm(FlaskForm):
-    username = StringField('User Name', validators = [InputRequired("Please enter a username")])
-    password = PasswordField('Password', validators = [InputRequired("Please enter a password")])
-    submit =  SubmitField('Login')
-
-class RegisterForm(FlaskForm):
-    email = StringField('Email', validators = [InputRequired("Please enter a email")])
-    password = PasswordField('Password', validators = [InputRequired("Please enter a password")])
-    submit =  SubmitField('Register')
+class TextingForm(FlaskForm):
+    number= StringField('Twilio Number', validators = [InputRequired("Please enter a number")])
+    key = PasswordField('Twilio Key', validators = [InputRequired("Please enter your key")])
+    textingList = FileField('Call List File', validators=[InputRequired("Please upload a file"),FileAllowed(['csv', 'CSVs only!'])])
+    message = TextAreaField('Message Text', validators = [InputRequired("Please enter your message")])
+    submit =  SubmitField('Submit')
