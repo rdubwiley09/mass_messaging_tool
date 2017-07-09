@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired, InputRequired
 
 class TextingForm(FlaskForm):
     number= StringField('Twilio Number', validators = [InputRequired("Please enter a number")])
+    accountId = StringField('Twilio ID', validators = [InputRequired("Please enter your Twilio ID")])
     key = PasswordField('Twilio Key', validators = [InputRequired("Please enter your key")])
     textingList = FileField('Call List File', validators=[InputRequired("Please upload a file"),FileAllowed(['csv', 'CSVs only!'])])
     message = TextAreaField('Message Text', validators = [InputRequired("Please enter your message")])
